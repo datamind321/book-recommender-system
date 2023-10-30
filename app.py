@@ -7,7 +7,6 @@ import webbrowser
 
 df = pd.read_pickle('popular.pkl')
 
-books = pd.read_pickle('books.pkl')
 similarity_scores = pd.read_pickle('similarity.pkl')
 pt = pd.read_pickle('pt.pkl')
 final_books = pd.read_pickle("final.pkl")
