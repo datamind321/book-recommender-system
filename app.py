@@ -36,8 +36,7 @@ def fetch_book_details(book_name):
     response=requests.get(url)
     obj=response.json()
     book_details=[]
-    ids = [id['id'] for id in obj['items']]
-    ids = ids[0]
+  
     title = obj['items'][0]['volumeInfo']['title']
     author = obj['items'][0]['volumeInfo']['authors'][0]
     publish_date= obj['items'][0]['volumeInfo']['publishedDate'] 
