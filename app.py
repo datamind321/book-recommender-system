@@ -6,7 +6,7 @@ import requests
 
 df = pd.read_pickle('popular.pkl')
 
-books = pd.read_pickle('books.pkl')
+
 similarity_scores = pd.read_pickle('similarity.pkl')
 pt = pd.read_pickle('pt.pkl')
 final_books = pd.read_pickle("final.pkl")
@@ -22,7 +22,7 @@ def recommend_book(book_name):
     data=[]
     for i in similar_items:
         item=[]
-        temp_df = books[books['Book-Title'] == pt.index[i[0]]]
+        temp_df = final_books[final_books['Book-Title'] == pt.index[i[0]]]
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Title'].values))
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Author'].values))
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values))
